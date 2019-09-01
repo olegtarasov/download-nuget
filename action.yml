@@ -1,6 +1,6 @@
-name: 'Node 12 Template Action'
-description: 'Get started with Node actions'
-author: 'GitHub'
+name: 'Download latest NuGet (cross-platform)'
+description: 'Cross-platform action that downloads the latest NuGet.exe and adds it to PATH.'
+author: 'Oleg Tarasov'
 inputs:
   myInput:
     description: 'Input to use'
@@ -8,3 +8,6 @@ inputs:
 runs:
   using: 'node12'
   main: 'lib/main.js'
+branding:
+  icon: 'package'
+  color: 'orange'

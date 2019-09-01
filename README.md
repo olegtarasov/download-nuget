@@ -1,8 +1,19 @@
-# JavaScript Action Template
+# Download NuGet
 
-This template offers an easy way to get started writing a JavaScript action with TypeScript compile time support, unit testing with Jest and using the GitHub Actions Toolkit.
+Cross-platform action that downloads the latest NuGet.exe and adds it to PATH. You can use the executable on Linux and MacOs through `mono`.
 
-## Getting Started
+## Usage
+
+```yaml
+    steps:
+      - uses: olegtarasov/download-nuget@v1
+
+      - name: Make Nuget package (Non-Windows)
+        run: mono nuget.exe pack foobar.nuspec
+    
+      - name: Make Nuget package (Windows)
+        run: nuget pack foobar.nuspec
+```
 
 See the walkthrough located [here](https://github.com/actions/toolkit/blob/master/docs/javascript-action.md).
 
