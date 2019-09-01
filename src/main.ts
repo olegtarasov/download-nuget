@@ -11,9 +11,10 @@ async function run() {
     
     fs.renameSync(nugetExe, newPath);
 
-    core.debug(`Saved NuGet.exe to ${newPath}`)
+    console.log(`Saved NuGet.exe to ${newPath}`);
     
     await core.addPath(dir);
+    await core.exportVariable("NUGET_EXE", newPath);
   } catch (error) {
     core.setFailed(error.message);
   }
